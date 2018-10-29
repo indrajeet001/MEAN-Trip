@@ -1,0 +1,18 @@
+<router-outlet></router-outlet>
+<nav class="navbar navbar-dark bg-dark mb-5">
+  <a class="navbar-brand" href="/">Trip-Manager</a>
+  <div class="navbar-expand mr-auto">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" [routerLink]="['/home']" routerLinkActive="router-link-active" >Home</a>
+      <a class="nav-item nav-link" [routerLink]="['/trip']" routerLinkActive="router-link-active" >Trip</a>
+      <a class="nav-item nav-link" [routerLink]="['/trip-expense']" routerLinkActive="router-link-active" >Trip-Expense</a>
+      <a class="nav-item nav-link" [routerLink]="['/about']" routerLinkActive="router-link-active" >About</a>
+    </div>
+  </div>
+  <div class="d-flex flex-row-reverse bd-highlight">
+      <a class="nav-item nav-link" [routerLink]="['/login']" routerLinkActive="router-link-active">Login</a>
+      <a class="nav-item nav-link" [routerLink]="['/register']" routerLinkActive="router-link-active">Register</a>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

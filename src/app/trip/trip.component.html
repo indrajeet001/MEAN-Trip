@@ -1,0 +1,57 @@
+<h2>Add Trip</h2>
+<form [formGroup]="tripForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="tripcreator">Trip Creater</label>
+    <input type="text" formControlName="tripcreator" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.tripcreator.errors }" />
+    <div *ngIf="submitted && f.tripcreator.errors" class="invalid-feedback">
+      <div *ngIf="f.tripcreator.errors.required">Trip Creator Name is required</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="depart">Departure</label>
+    <input type="text" formControlName="depart" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.depart.errors }" />
+    <div *ngIf="submitted && f.depart.errors" class="invalid-feedback">
+      <div *ngIf="f.depart.errors.required">Departure Station is required</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="destination">Destination Station</label>
+    <input type="text" formControlName="destination" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.destination.errors }" />
+    <div *ngIf="submitted && f.destination.errors" class="invalid-feedback">
+      <div *ngIf="f.destination.errors.required">Destination is required</div>
+      </div>
+  </div>
+  <div class="form-group">
+    <label for="sdate">Start Date</label>
+    <input type="date" formControlName="sdate" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.sdate.errors }" />
+    <div *ngIf="submitted && f.date.errors" class="invalid-feedback">
+      <div *ngIf="f.sdate.errors.required">Starting Date is required</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="edate">End Date</label>
+    <input type="date" formControlName="edate" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.edate.errors }" />
+    <div *ngIf="submitted && f.edate.errors" class="invalid-feedback">
+      <div *ngIf="f.edate.errors.required">End Date is required</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="travelers">Add Travelers</label>
+    <input type="text" formControlName="travelers" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.travelers.errors }" />
+    <div *ngIf="submitted && f.travelers.errors" class="invalid-feedback">
+      <div *ngIf="f.travelers.errors.required">Travellers are required</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="image">Image Path</label>
+    <input type="image" formControlName="image" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.image.errors }" />
+    <div *ngIf="submitted && f.image.errors" class="invalid-feedback">
+      <div *ngIf="f.image.errors.required">Image is required</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <button [disabled]="loading" class="btn btn-primary">Submit</button>
+    <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+    <a [routerLink]="['/login']" class="btn btn-link">Cancel</a>
+  </div>
+</form>
